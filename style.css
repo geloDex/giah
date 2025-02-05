@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(2, 2, 2);
+}
+
+p {
+    font-size: clamp(12px, 4vw, 20px); /* Adjusted for better readability */
+    line-height: 1.4;
+    text-align: center; /* Centered for better mobile readability */
+    background: url('giah.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 90%; /* Prevents overflow on small screens */
+}
+
+/* Ensure it works on more browsers */
+@supports not (-webkit-background-clip: text) {
+    p {
+        color: white; /* Fallback color */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column; /* Adjusts layout for smaller screens */
+        padding: 10px; /* Adds some spacing */
+    }
+
+    p {
+        font-size: clamp(14px, 5vw, 24px); /* Larger text for readability */
+        text-align: center;
+        word-break: break-word; /* Ensures text wraps properly */
+    }
+}
